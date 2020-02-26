@@ -1,0 +1,7 @@
+$myarray = @("Mohan"," Sam", "John", "Sumit")
+$myarray[0] + $myarray[1]
+
+
+# Hash table or Key pair
+$myhashtable = @{"Myfirstname" = "Sam";"Mylastname" = " John"}
+$myhashtable["Myfirstname"] + $myhashtable["Mylastname"]
