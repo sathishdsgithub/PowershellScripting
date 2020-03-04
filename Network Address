@@ -1,0 +1,2 @@
+$index = Get-NetIPAddress | Select-Object -ExpandProperty InterfaceIndex ; 
+foreach($i in $index) { Write-Host "########### Network Details ############# $i" ; (Get-NetIPAddress -InterfaceIndex  $i)}
