@@ -31,3 +31,23 @@ Get-ADGroup -Filter * -Properties * | Select-Object -Property Name | Select-Stri
  Get-ADGroup -Filter 'Name -like "*Remote*" '| select Name
  
  #############################################################################################################
+ 
+ Get members of a group 
+ 
+  Get-NetGroupMember -GroupName "Domain Admins" -Recurse
+  Get-ADGroupMember -Identity "Domain Admins" -Recursive
+  
+  #############################################################################################################
+  Add user to the group 
+  
+   Add-ADGroupMember -Identity "Domain Admins" -Members "some username"
+   
+   #############################################################################################################
+   
+   
+   Get-ADPrincipalGroupMembership -Identity "someusername" | select name.  ==> Get specific user group details
+   
+  
+   Get-NetGroupMember -GroupName "Domain Admins" -Recurse. ==> Get the users of a group
+    
+    #############################################################################################################
