@@ -1,2 +1,4 @@
 Get-ADUser -Filter * -Properties * | select name, @{expression={[datetime]::fromFileTime($_.pwdlastset)}}
 
+Get-ADComputer -Filter * -Properties DNSHostName | %{Test-Connection -Count 1 -ComputerName $_.DNSHostName}
+
