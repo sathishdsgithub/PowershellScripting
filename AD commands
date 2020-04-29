@@ -28,4 +28,6 @@ Get-ADGroup -Filter * -Properties * | Select-Object -Property Name | Select-Stri
 
  Get-ADComputer -Filter * -Properties * | Select-Object -Property *DNS*
  
+ Get-ADGroup -Filter 'Name -like "*Remote*" '| select Name
+ 
  #############################################################################################################
