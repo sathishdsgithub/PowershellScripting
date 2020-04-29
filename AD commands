@@ -18,3 +18,14 @@ E-ST... EZ-STUO... 192.168.28.134    fe90::8479:85a6:e5e1:217c%3              32
 #############################################################################################################
 
 Get-ADDomain | select DNSRoot | %{Test-Connection -Count 1 -ComputerName $_.DNSRoot}
+
+#############################################################################################################
+
+Search based on some string
+
+Get-ADGroup -Filter * -Properties * | Select-Object -Property Name | Select-String -Pattern "Remote"
+
+
+ Get-ADComputer -Filter * -Properties * | Select-Object -Property *DNS*
+ 
+ #############################################################################################################
