@@ -1,0 +1,2 @@
+Get-ADUser -Filter * -Properties * | select name, @{expression={[datetime]::fromFileTime($_.pwdlastset)}}
+
