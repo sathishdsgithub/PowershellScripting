@@ -1,0 +1,4 @@
+ $filepath = "C:\Users\Administrator\Desktop\dele files\Section4\TestFiles"
+$nodays = 10
+Get-ChildItem $filepath -Recurse | Where-Object {$_.LastWriteTime -lt (Get-Date).AddDays(-$nodays)} |
+ %{ $_.FullName} | del -Force 
