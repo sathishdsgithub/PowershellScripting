@@ -14,3 +14,7 @@ Get-ADComputer -Filter * -Properties DNSHostName | %{Test-Connection -Count 1 -C
 Source        Destination     IPV4Address      IPV6Address                              Bytes    Time(ms)
 ------        -----------     -----------      -----------                              -----    --------
 E-ST... EZ-STUO... 192.168.28.134    fe90::8479:85a6:e5e1:217c%3              32       0
+
+#############################################################################################################
+
+Get-ADDomain | select DNSRoot | %{Test-Connection -Count 1 -ComputerName $_.DNSRoot}
