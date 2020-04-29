@@ -1,4 +1,16 @@
 Get-ADUser -Filter * -Properties * | select name, @{expression={[datetime]::fromFileTime($_.pwdlastset)}}
 
+Output 
+name                [datetime]::fromFileTime($_.pwdlastset)
+----                ---------------------------------------
+Administrator       4/21/2020 7:33:53 AM
+Guest               1/1/1601 12:00:00 AM
+DefaultAccount      1/1/1601 12:00:00 AM
+
+#############################################################################################################
+
 Get-ADComputer -Filter * -Properties DNSHostName | %{Test-Connection -Count 1 -ComputerName $_.DNSHostName}
 
+Source        Destination     IPV4Address      IPV6Address                              Bytes    Time(ms)
+------        -----------     -----------      -----------                              -----    --------
+E-ST... EZ-STUO... 192.168.28.134    fe90::8479:85a6:e5e1:217c%3              32       0
